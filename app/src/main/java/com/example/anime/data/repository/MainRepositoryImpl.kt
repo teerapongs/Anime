@@ -7,7 +7,6 @@ import javax.inject.Inject
 class MainRepositoryImpl @Inject constructor (
     private val dataSource: MainDataSource
 ): MainRepository {
-
     override suspend fun getAnime(): Anime {
         return dataSource.getAnime()
     }

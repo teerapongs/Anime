@@ -18,7 +18,6 @@ class MainViewModel @Inject constructor(
 
     private val _anime = MutableLiveData<MainState>()
     val anime: LiveData<MainState> = _anime
-
     var onCallBack = MutableLiveData<Boolean>()
 
     init {

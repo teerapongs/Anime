@@ -27,7 +27,6 @@ class MainActivity : BaseActivity() {
     private val mainViewModel: MainViewModel? by viewModels()
     private var animeDAO: Anime? = null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
@@ -68,7 +67,6 @@ class MainActivity : BaseActivity() {
     private fun setUpObserver() {
         mainViewModel?.anime?.observe(this, Observer { response ->
             val state = response ?: return@Observer
-
             state.anime?.let { anime ->
                 animeDAO = anime
                 updateUI()

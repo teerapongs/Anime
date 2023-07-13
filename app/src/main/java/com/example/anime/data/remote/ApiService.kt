@@ -9,13 +9,4 @@ interface ApiService {
     @GET(ANIME)
     suspend fun getAnime(): Anime
 
-//    companion object {
-//        fun providerAPI(): ApiService {
-//            return  Retrofit.Builder()
-//                .baseUrl(Constants.BASE_URL)
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .build()
-//                .create(ApiService::class.java)
-//        }
-//    }
 }

@@ -6,6 +6,5 @@ import javax.inject.Inject
 class MainDataSource @Inject constructor(
     private val service: ApiService
 ) {
-
     suspend fun getAnime() = service.getAnime()
 }
