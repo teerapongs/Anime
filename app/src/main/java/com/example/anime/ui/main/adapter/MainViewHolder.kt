@@ -10,7 +10,9 @@ class MainViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun onBindData(data: AnimeData?) {
-        binding.animeImageView loadImage data?.image?.jpg?.small_image_url
-        binding.animeTextView.text = data?.title
+        binding.apply {
+            animeImageView loadImage data?.images?.jpg?.smallImageUrl
+            animeTextView.text = data?.title
+        }
     }
 }

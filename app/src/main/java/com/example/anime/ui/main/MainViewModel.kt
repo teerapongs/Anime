@@ -19,8 +19,11 @@ class MainViewModel @Inject constructor(
     private val _anime = MutableLiveData<MainState>()
     val anime: LiveData<MainState> = _anime
 
+    var onCallBack = MutableLiveData<Boolean>()
+
     init {
         getAnime()
+        onCallBack.value = false
     }
 
     private fun getAnime() {
@@ -30,12 +33,20 @@ class MainViewModel @Inject constructor(
                     _anime.value = MainState(anime = result.data)
                 }
                 is Resource.Error -> {
-                    _anime.value = MainState(error = result.message ?: "An unexpected error occured")
+                    _anime.value = MainState(error = result.message ?: "An unexpected error occurred")
                 }
                 is Resource.Loading -> {
                     _anime.value = MainState(isLoading = true)
                 }
             }
         }.launchIn(viewModelScope)
+    }
+
+    fun getAmineAgain() {
+        getAnime()
+    }
+
+    fun setOnCallBack() {
+        onCallBack.value = onCallBack.value != true
     }
 }

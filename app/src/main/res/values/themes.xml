@@ -6,4 +6,7 @@
     </style>
 
     <style name="Theme.Anime" parent="Base.Theme.Anime" />
+    <style name="ProgressBarStyle">
+        <item name="colorAccent">@color/white</item>
+    </style>
 </resources>

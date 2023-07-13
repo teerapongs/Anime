@@ -1,15 +1,13 @@
 package com.example.anime.data.remote
 
-import com.example.anime.common.Constants
-import com.example.anime.domain.model.AnimeDAO
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import com.example.anime.common.Constants.ANIME
+import com.example.anime.domain.model.Anime
 import retrofit2.http.GET
 
 interface ApiService {
 
-    @GET(Constants.ANIME)
-    suspend fun getAnime(): AnimeDAO
+    @GET(ANIME)
+    suspend fun getAnime(): Anime
 
 //    companion object {
 //        fun providerAPI(): ApiService {
