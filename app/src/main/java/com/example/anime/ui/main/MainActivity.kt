@@ -2,7 +2,6 @@ package com.example.anime.ui.main
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.anime.base.BaseActivity
@@ -16,15 +15,14 @@ import com.example.anime.extension.show
 import com.example.anime.ui.detail.AnimeDetailsActivity
 import com.example.anime.ui.main.adapter.MainAdapter
 import com.example.anime.ui.anim.ProgressBarAnimation
-import dagger.hilt.android.AndroidEntryPoint
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-@AndroidEntryPoint
 class MainActivity : BaseActivity() {
 
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding
     private val mainAdapter: MainAdapter by lazy { MainAdapter() }
-    private val mainViewModel: MainViewModel? by viewModels()
+    private val mainViewModel: MainViewModel? by viewModel()
     private var animeDAO: Anime? = null
 
 
