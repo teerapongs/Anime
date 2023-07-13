@@ -24,13 +24,6 @@ class MainRepositoryTest {
     @Mock
     private lateinit var repository: MainRepository
 
-    @get:Rule
-    val instantExecutorRule = InstantTaskExecutorRule()
-
-    @ExperimentalCoroutinesApi
-    @get:Rule
-    var mainDispatcherRule = MainDispatcherRule()
-
     @Before
     fun setup() {
         MockitoAnnotations.openMocks(this)
