@@ -1,6 +1,5 @@
 package com.example.anime
 
-import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.anime.domain.model.Anime
 import com.example.anime.domain.model.AnimeData
 import com.example.anime.domain.repository.MainRepository
@@ -9,7 +8,6 @@ import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
 import org.junit.Before
-import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
