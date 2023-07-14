@@ -55,6 +55,7 @@ class MainRepositoryTest {
             titleJapanese = "キャシャーン SINS"
         ))
     }
+
     @Before
     fun setup() {
         MockitoAnnotations.openMocks(this)
@@ -86,6 +87,7 @@ class MainRepositoryTest {
         assertThat(value?.isLoading)?.isEqualTo(false)
         assertThat(value?.anime?.data)?.isEqualTo(mockData)
     }
+
     @Test
     fun `Main view model get anime use case null`() = runTest {
         `when`(repository.getAnime()).thenReturn(null)
